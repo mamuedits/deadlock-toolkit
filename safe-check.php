@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['resources'] = $resources;
     $_SESSION['total_resources'] = $total_resources;
     
-    // Initialize matrices if not set
     if (!isset($_SESSION['allocation'])) {
         $_SESSION['allocation'] = array_fill(0, $processes, array_fill(0, $resources, 0));
     }
