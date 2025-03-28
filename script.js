@@ -1,6 +1,4 @@
-// Function to show popup message
 function showMessage(message) {
-    // Create modal elements
     const modal = document.createElement('div');
     modal.className = 'modal';
     modal.id = 'messageModal';
@@ -23,18 +21,14 @@ function showMessage(message) {
     }
     messagePara.textContent = message;
     
-    // Build modal structure
     modalContent.appendChild(closeSpan);
     modalContent.appendChild(messagePara);
     modal.appendChild(modalContent);
     
-    // Add to document
     document.body.appendChild(modal);
     
-    // Display modal
     modal.style.display = 'block';
     
-    // Close when clicking outside
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = 'none';
@@ -42,7 +36,6 @@ function showMessage(message) {
     }
 }
 
-// Form validation
 document.addEventListener('DOMContentLoaded', function() {
     const forms = document.querySelectorAll('form');
     
@@ -50,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         form.addEventListener('submit', function(e) {
             let valid = true;
             
-            // Validate all required fields
             const inputs = form.querySelectorAll('input[required]');
             inputs.forEach(input => {
                 if (!input.value) {
