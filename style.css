@@ -1,0 +1,532 @@
+/* Modern CSS Styles for Deadlock Prevention Toolkit */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap'); */
+
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4cc9f0;
+    --success-color: #4ade80;
+    --danger-color: #f87171;
+    --warning-color: #fbbf24;
+    --dark-color: #1e293b;
+    --light-color: #f8fafc;
+    --gray-color: #94a3b8;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background: linear-gradient(135deg, #001636 0%, #00153e 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Styles */
+.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+/* Typography */
+h1, h2, h3 {
+    color: var(--dark-color);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    color: var(--secondary-color);
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: var(--transition);
+    background-color: var(--light-color);
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+/* Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    background-color: var(--secondary-color);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+}
+
+.btn-success:hover {
+    background-color: #22c55e;
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+}
+
+.btn-danger:hover {
+    background-color: #ef4444;
+}
+
+.btn-warning {
+    background-color: var(--warning-color);
+    color: var(--dark-color);
+}
+
+.btn-warning:hover {
+    background-color: #f59e0b;
+}
+
+/* Table Styles */
+.matrix-table, 
+.steps-table, 
+.final-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.matrix-table th, 
+.matrix-table td,
+.steps-table th, 
+.steps-table td,
+.final-table th, 
+.final-table td {
+    padding: 15px;
+    text-align: left;
+    font-weight: 500;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.matrix-table th,
+.steps-table th,
+.final-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.03em;
+    font-size: 0.85rem;
+}
+
+.matrix-table tr:last-child td,
+.final-table tr:last-child td {
+    border-bottom: none;
+}
+
+.matrix-table tr:nth-child(even),
+.steps-table tr:nth-child(even),
+.final-table tr:nth-child(even) {
+    background-color: rgba(241, 245, 249, 0.5);
+}
+
+.matrix-table tr:hover,
+.steps-table tr:hover,
+.final-table tr:hover {
+    background-color: rgba(224, 231, 255, 0.3);
+}
+
+.matrix-table input {
+    width: 70px;
+    padding: 8px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.matrix-table input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.highlight {
+    background-color: rgba(67, 97, 238, 0.1) !important;
+    font-weight: 600;
+}
+
+.highlight td {
+    border-top: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Results Section */
+.results-section {
+    margin-bottom: 2.5rem;
+    padding: 25px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.results-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+}
+
+/* Steps Table Specific */
+.steps-table td {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.9rem;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Modal/Popup Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from { 
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: var(--gray-color);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close:hover {
+    color: var(--danger-color);
+    transform: rotate(90deg);
+}
+
+.success-message {
+    color: var(--success-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.error-message {
+    color: var(--danger-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .steps-table{
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    .matrix-table, .steps-table, .final-table {
+        display: block;
+        overflow-x: auto;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    
+    .actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: help;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.matrix-input {
+    width: 60px;
+    padding: 8px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.matrix-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+    transform: scale(1.05);
+}
+
+.steps-table th {
+    font-family: 'Inter', sans-serif; /* Keep headers consistent */
+}
+
+/* Enhanced Table Styling */
+.matrix-table,
+.steps-table,
+.final-table {
+    --table-border: 1px solid rgba(0, 0, 0, 0.08);
+    border: var(--table-border);
+}
+
+.matrix-table th,
+.steps-table th,
+.final-table th {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    font-size: 0.85rem;
+    padding: 12px 15px;
+}
+
+.matrix-table td,
+.steps-table td,
+.final-table td {
+    padding: 12px 15px;
+    border-bottom: var(--table-border);
+    vertical-align: middle;
+}
+
+/* Zebra striping with softer colors */
+.matrix-table tr:nth-child(even),
+.steps-table tr:nth-child(even),
+.final-table tr:nth-child(even) {
+    background-color: rgba(241, 245, 249, 0.3);
+}
+
+/* Hover effect */
+.matrix-table tr:hover,
+.steps-table tr:hover,
+.final-table tr:hover {
+    background-color: rgba(224, 231, 255, 0.2);
+}
+
+/* Special styling for numbers in tables */
+.table-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .matrix-table,
+    .steps-table,
+    .final-table {
+        font-size: 0.9rem;
+    }
+    
+    .matrix-table th,
+    .steps-table th,
+    .final-table th {
+        font-size: 1rem;
+        padding: 10px 12px;
+    }
+    
+    .matrix-table td,
+    .steps-table td,
+    .final-table td {
+        padding: 10px 12px;
+    }
+}
