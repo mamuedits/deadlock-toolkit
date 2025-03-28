@@ -1,5 +1,3 @@
-/* Modern CSS Styles for Deadlock Prevention Toolkit */
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap'); */
 
 :root {
     --primary-color: #4361ee;
@@ -15,7 +13,6 @@
     --transition: all 0.3s ease;
 }
 
-/* Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -31,7 +28,6 @@ body {
     padding: 20px;
 }
 
-/* Container Styles */
 .container {
     max-width: 1200px;
     margin: 30px auto;
@@ -53,7 +49,6 @@ body {
     background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
 }
 
-/* Typography */
 h1, h2, h3 {
     color: var(--dark-color);
     font-weight: 700;
@@ -83,7 +78,6 @@ h2 {
     color: var(--secondary-color);
 }
 
-/* Form Styles */
 .form-group {
     margin-bottom: 1.5rem;
 }
@@ -113,7 +107,6 @@ input[type="text"]:focus {
     box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
 }
 
-/* Button Styles */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -163,7 +156,6 @@ input[type="text"]:focus {
     background-color: #f59e0b;
 }
 
-/* Table Styles */
 .matrix-table, 
 .steps-table, 
 .final-table {
@@ -241,7 +233,6 @@ input[type="text"]:focus {
     border-bottom: 2px solid var(--primary-color);
 }
 
-/* Results Section */
 .results-section {
     margin-bottom: 2.5rem;
     padding: 25px;
@@ -262,13 +253,11 @@ input[type="text"]:focus {
     background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
 }
 
-/* Steps Table Specific */
 .steps-table td {
     font-family: 'Roboto Mono', monospace;
     font-size: 0.9rem;
 }
 
-/* Actions */
 .actions {
     display: flex;
     gap: 15px;
@@ -276,7 +265,6 @@ input[type="text"]:focus {
     flex-wrap: wrap;
 }
 
-/* Modal/Popup Styles */
 .modal {
     display: none;
     position: fixed;
@@ -350,7 +338,6 @@ input[type="text"]:focus {
     padding: 20px 0;
 }
 
-/* Animations */
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
@@ -361,7 +348,6 @@ input[type="text"]:focus {
     animation: pulse 2s infinite;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         padding: 20px;
@@ -390,7 +376,6 @@ input[type="text"]:focus {
     }
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -410,7 +395,6 @@ input[type="text"]:focus {
     background: var(--secondary-color);
 }
 
-/* Tooltip */
 .tooltip {
     position: relative;
     display: inline-block;
@@ -459,10 +443,9 @@ input[type="text"]:focus {
 }
 
 .steps-table th {
-    font-family: 'Inter', sans-serif; /* Keep headers consistent */
+    font-family: 'Inter', sans-serif;
 }
 
-/* Enhanced Table Styling */
 .matrix-table,
 .steps-table,
 .final-table {
@@ -488,28 +471,24 @@ input[type="text"]:focus {
     vertical-align: middle;
 }
 
-/* Zebra striping with softer colors */
 .matrix-table tr:nth-child(even),
 .steps-table tr:nth-child(even),
 .final-table tr:nth-child(even) {
     background-color: rgba(241, 245, 249, 0.3);
 }
 
-/* Hover effect */
 .matrix-table tr:hover,
 .steps-table tr:hover,
 .final-table tr:hover {
     background-color: rgba(224, 231, 255, 0.2);
 }
 
-/* Special styling for numbers in tables */
 .table-number {
     font-family: 'JetBrains Mono', monospace;
     font-weight: 500;
     color: var(--dark-color);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .matrix-table,
     .steps-table,
@@ -529,4 +508,71 @@ input[type="text"]:focus {
     .final-table td {
         padding: 10px 12px;
     }
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.alert-danger {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border-left: 4px solid #ef4444;
+}
+
+.alert-success {
+    background-color: #dcfce7;
+    color: #166534;
+    border-left: 4px solid #22c55e;
+}
+
+.recovery-actions {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+}
+
+.recovery-form {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.recovery-log {
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.state-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.state-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.state-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.state-table th, .state-table td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+}
+
+.state-table th {
+    background-color: #f1f5f9;
 }
