@@ -169,13 +169,17 @@ $is_safe = (count($safe_sequence) == $processes);
         </div>
         
         <div class="actions">
+            <?php if (!$is_safe): ?>
+                <a href="recovery.php" class="btn btn-warning">Deadlock Recovery</a>
+            <?php endif; ?>
             <button onclick="showMessage('<?= $is_safe ? 'System is in a safe state!' : 'Warning: System is in an unsafe state (potential deadlock)!' ?>')" 
                     class="btn <?= $is_safe ? 'btn-success' : 'btn-danger' ?>">
                 Show Safety Status
             </button>
-            <a href="index.php" class="btn">Start Over</a>
+            <a href="index.html" class="btn">Start Over</a>
         </div>
     </div>
+    
     
     <script src="script.js"></script>
     <script>
