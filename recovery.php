@@ -16,6 +16,15 @@ for ($i = 0; $i < $processes; $i++) {
         $need[$i][$j] = $max[$i][$j] - $allocation[$i][$j];
     }
 }
+
+//Allocated Resources calculation
+$allocated_resources = array_fill(0, $resources, 0);
+for ($i = 0; $i < $processes; $i++) {
+    for ($j = 0; $j < $resources; $j++) {
+        $allocated_resources[$j] += $allocation[$i][$j];
+    }
+}
+
 //Check availability of resources
 $available = [];
 for ($j = 0; $j < $resources; $j++) {
